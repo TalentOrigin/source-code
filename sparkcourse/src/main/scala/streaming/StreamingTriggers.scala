@@ -35,7 +35,7 @@ object StreamingTriggers {
 
     val sink = tumblingWindowAggregations
       .writeStream
-        .trigger(Trigger.Continuous())
+        .trigger(Trigger.Once())
       .format("console")
       .option("truncate", "false")
       .outputMode("complete")
